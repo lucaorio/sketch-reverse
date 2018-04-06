@@ -16,5 +16,16 @@
         </description>
         <enclosure url="https://github.com/lucaorio/sketch-reverse/releases/download/v1.0.0/sketch-reverse.zip" sparkle:version="1.0.0" />
       </item>
+      <item>
+        <title>Sketch Reverse 1.0.1</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Fixed Typos</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/lucaorio/sketch-reverse/releases/download/v1.0.1/sketch-reverse.zip" sparkle:version="1.0.1" />
+      </item>
   </channel>
 </rss>

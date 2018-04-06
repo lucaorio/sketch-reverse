@@ -11,7 +11,7 @@
       "identifier": "reverseY",
       "script": "./reverseY.js",
       "shortcut": "ctrl cmd y",
-      "description": "Reverse the position of selected elements on the Y axe",
+      "description": "Reverse the position of selected elements on the Y axis",
       "icon" : "icons/reverseY.png"
     },
     {
@@ -19,7 +19,7 @@
       "identifier": "reverseX",
       "script": "./reverseX.js",
       "shortcut": "ctrl cmd x",
-      "description": "Reverse the position of selected elements on the X axe",
+      "description": "Reverse the position of selected elements on the X axis",
       "icon" : "icons/reverseX.png"
     },
     {

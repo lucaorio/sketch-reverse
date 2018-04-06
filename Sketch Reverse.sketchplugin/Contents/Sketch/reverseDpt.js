@@ -123,9 +123,9 @@ var getlyrs = function getlyrs(sel, count) {
 };
 
 // reorder array by position rather than depth
-var reorder = function reorder(lyrs, axe) {
+var reorder = function reorder(lyrs, axis) {
   return [].concat(_toConsumableArray(lyrs)).sort(function (a, b) {
-    return a[axe] - b[axe];
+    return a[axis] - b[axis];
   });
 };
 
@@ -141,14 +141,14 @@ var getdist = function getdist(lyrs) {
 };
 
 // reposition the layers on the artboard
-var reposition = function reposition(lyrs, axe) {
+var reposition = function reposition(lyrs, axis) {
   lyrs.reverse().forEach(function (lyr, idx) {
     var prev = lyrs[idx - 1];
-    var lastPos = lyrs[lyrs.length - 1][axe];
-    var dim = axe === 'y' ? 'h' : 'w';
-    var prevBounds = prev ? prev.pointer.frame()[axe]() + prev[dim] : lastPos;
+    var lastPos = lyrs[lyrs.length - 1][axis];
+    var dim = axis === 'y' ? 'h' : 'w';
+    var prevBounds = prev ? prev.pointer.frame()[axis]() + prev[dim] : lastPos;
 
-    lyr.pointer.frame()[axe] = prevBounds + lyr.dist[axe];
+    lyr.pointer.frame()[axis] = prevBounds + lyr.dist[axis];
   });
 };
 
@@ -174,8 +174,8 @@ var exit = function exit(doc, msg) {
   doc.reloadInspector();
 };
 
-// reverse the layer order on a specific axe, or just their depth
-var reverse = function reverse(ctx, axe) {
+// reverse the layer order on a specific axis, or just their depth
+var reverse = function reverse(ctx, axis) {
   var doc = ctx.document;
   var sel = ctx.selection;
   var count = sel.count();
@@ -187,12 +187,12 @@ var reverse = function reverse(ctx, axe) {
     return;
   }
 
-  if (axe === 'dpt') {
+  if (axis === 'dpt') {
     redepth(sel, lyrs, getParent(sel));
     exit(doc, 'Reversed order of ' + String(count) + ' layers. \uD83C\uDF89');
   } else {
-    reposition(getdist(reorder(lyrs, axe)), axe);
-    exit(doc, 'Reversed position of ' + String(count) + ' layers on the ' + String(axe.toUpperCase()) + ' axe. \uD83C\uDF89');
+    reposition(getdist(reorder(lyrs, axis)), axis);
+    exit(doc, 'Reversed position of ' + String(count) + ' layers on the ' + String(axis.toUpperCase()) + ' axis. \uD83C\uDF89');
   }
 };
 
