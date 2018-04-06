@@ -2,7 +2,7 @@
 ![Sketch Reverse](https://raw.githubusercontent.com/lucaorio/sketch-reverse/master/images/img-header.jpg)
 > Reverse the position or depth of selected elements
 
-**Sketch Reverse** is a plugin made for [Sketch](http://sketchapp.com). It *reverses the position* of multiple elements on the x or y axe, **without** changing the layers' depth/order. An action to *reverse the layers' depth/order* is also provided. It doesn't affect the position of the related elements on the artboard.
+**Sketch Reverse** is a plugin made for [Sketch](http://sketchapp.com). It *reverses the position* of multiple elements on the x or y axes, **without** changing the layers' depth/order. An action to *reverse the layers' depth/order* is also provided. It doesn't affect the position of the related elements on the artboard.
 
 Follow me on Twitter [@lucaorio_](https://twitter.com/lucaorio_) for updates, help and other stuff! 🎉
 

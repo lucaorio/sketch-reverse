@@ -24,7 +24,7 @@ const getlyrs = (sel, count) => {
 }
 
 // reorder array by position rather than depth
-const reorder = (lyrs, axe) => [...lyrs].sort((a, b) => (a[axe] - b[axe]));
+const reorder = (lyrs, axis) => [...lyrs].sort((a, b) => (a[axis] - b[axis]));
 
 // store distance between bottom/right edge of a layer and its subsequent one
 const getdist = lyrs => {
@@ -38,14 +38,14 @@ const getdist = lyrs => {
 }
 
 // reposition the layers on the artboard
-const reposition = (lyrs, axe) => {
+const reposition = (lyrs, axis) => {
   lyrs.reverse().forEach((lyr, idx) => {
     const prev = lyrs[idx - 1];
-    const lastPos = lyrs[lyrs.length - 1][axe];
-    const dim = axe === 'y' ? 'h' : 'w';
-    const prevBounds = prev ? prev.pointer.frame()[axe]() + prev[dim] : lastPos;
+    const lastPos = lyrs[lyrs.length - 1][axis];
+    const dim = axis === 'y' ? 'h' : 'w';
+    const prevBounds = prev ? prev.pointer.frame()[axis]() + prev[dim] : lastPos;
 
-    lyr.pointer.frame()[axe] = prevBounds + lyr.dist[axe];
+    lyr.pointer.frame()[axis] = prevBounds + lyr.dist[axis];
   });
 }
 
@@ -69,8 +69,8 @@ const exit = (doc, msg) => {
   doc.reloadInspector();
 };
 
-// reverse the layer order on a specific axe, or just their depth
-const reverse = (ctx, axe) => {
+// reverse the layer order on a specific axis, or just their depth
+const reverse = (ctx, axis) => {
   const doc = ctx.document;
   const sel = ctx.selection;
   const count = sel.count();
@@ -82,12 +82,12 @@ const reverse = (ctx, axe) => {
     return;
   }
 
-  if (axe === 'dpt') {
+  if (axis === 'dpt') {
     redepth(sel, lyrs, getParent(sel));
     exit(doc, `Reversed order of ${count} layers. 🎉`);
   } else {
-    reposition(getdist(reorder(lyrs, axe)), axe);
-    exit(doc, `Reversed position of ${count} layers on the ${axe.toUpperCase()} axe. 🎉`);
+    reposition(getdist(reorder(lyrs, axis)), axis);
+    exit(doc, `Reversed position of ${count} layers on the ${axis.toUpperCase()} axis. 🎉`);
   }
 }
 
