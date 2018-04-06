@@ -1,0 +1,42 @@
+{
+  "author": "Luca Orio",
+  "name": "Reverse",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "identifier": "com.sketch.reverse",
+  "appcast": "https://raw.githubusercontent.com/lucaorio/sketch-reverse/master/appcast.xml",
+  "commands": [
+    {
+      "name": "Y - Reverse Position",
+      "identifier": "reverseY",
+      "script": "./reverseY.js",
+      "shortcut": "ctrl cmd y",
+      "description": "Reverse the position of selected elements on the Y axe",
+      "icon" : "icons/reverseY.png"
+    },
+    {
+      "name": "X - Reverse Position",
+      "identifier": "reverseX",
+      "script": "./reverseX.js",
+      "shortcut": "ctrl cmd x",
+      "description": "Reverse the position of selected elements on the X axe",
+      "icon" : "icons/reverseX.png"
+    },
+    {
+      "name": "Depth - Reverse Order",
+      "identifier": "reverseDpt",
+      "script": "./reverseDpt.js",
+      "shortcut": "ctrl cmd o",
+      "description": "Reverse the depth/order of selected elements",
+      "icon" : "icons/reverseDpt.png"
+    }
+  ],
+  "menu": {
+    "title": "Reverse",
+    "items": [
+      "reverseY",
+      "reverseX",
+      "reverseDpt"
+    ]
+  }
+}
