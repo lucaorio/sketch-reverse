@@ -49,6 +49,10 @@ Or trigger the plugin via **shortcut**:
   <img width="160" height="40" src="http://sketchrunner.com/img/badge_blue.png">
 </a>
 
+<a href="https://sketchpacks.com/lucaorio/sketch-reverse/install">
+  <img width="160" height="41" src="http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png" >
+</a>
+
 ## License
 ![https://github.com/lucaorio/sketch-reverse/blob/master/license](https://img.shields.io/badge/license-MIT-blue.svg)
 
